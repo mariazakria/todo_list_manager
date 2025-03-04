@@ -27,7 +27,7 @@ class TaskController extends Controller
 
 
     public function edit($id){
-        $task = Task::findOrFail($id);
+        $task = auth()->user()->tasks()->findOrFail($id);
 
         return view('edit', compact('task'));
     }  
@@ -69,7 +69,7 @@ class TaskController extends Controller
    
     public function delete($id)
     {
-        $user = Task::find($id);
+        $user = auth()->user()->tasks()->findOrFail($id);
         $user->delete();
         return redirect()->route('todos.index')
         ->with('success', 'Task deleted successfully.');  
