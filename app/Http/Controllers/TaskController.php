@@ -13,7 +13,7 @@ class TaskController extends Controller
     //     return $user->id === $task->user_id;        
     // }
     public function index(){
-        $tasks = Task::paginate(10);
+        $tasks = auth()->user()->tasks()->paginate(10);
         return view('welcome', compact('tasks'));
     }    
 
