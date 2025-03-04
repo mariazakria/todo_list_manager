@@ -7,15 +7,9 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
-        
     ],
-    server: {
-        proxy: {
-          '/app': 'http://localhost',
-        },
-      },
-      build: {
-        outDir: 'build',
-      },
-    });
-    
+   
+    build: {
+        outDir: 'public/build', 
+    },
+});
