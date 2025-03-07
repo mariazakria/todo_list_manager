@@ -17,5 +17,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/delete/{id}', [TaskController::class, 'delete'])->name('todos.destroy');
 });
 
- 
+
 require __DIR__.'/auth.php';
